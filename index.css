@@ -86,7 +86,7 @@ body{
 }
 .tv-show .info{
 	width: 75%;
-  margin-left: 1em;
+  	margin-left: 1em;
 }
 .left{
 	float: left;
@@ -107,7 +107,7 @@ body{
 	padding: 8px 16px;
 	border-radius: 6px;
 }
-/*
+
 .loader,
 .loader:before,
 .loader:after {
@@ -166,4 +166,4 @@ body{
     box-shadow: 0 -2em;
     height: 5em;
   }
-}*/
+}
