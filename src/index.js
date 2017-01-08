@@ -11,6 +11,7 @@ import 'src/search-form'
 import qs from 'qs'
 
 page('/', function(ctx, next){
+  $tvShowsContainer.find('.tv-show').remove();
   if(!localStorage.shows){
   		getShows(function (shows){
         $tvShowsContainer.find('.loader').remove();
