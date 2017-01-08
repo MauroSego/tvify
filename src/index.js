@@ -4,9 +4,11 @@
 
 import $ from 'jquery'
 import page from 'page'
-import getShows from  'src/tvmaze-api-client' 
+import {getShows, searchShows} from  'src/tvmaze-api-client' 
 import renderShows from 'src/render'
 import $tvShowsContainer from 'src/tv-shows-container'
+import 'src/search-form'
+import qs from 'qs'
 
 page('/', function(ctx, next){
   if(!localStorage.shows){
@@ -19,5 +21,20 @@ page('/', function(ctx, next){
     renderShows(JSON.parse(localStorage.shows));
   }
 });
+
+page('/search', function(ctx, next){
+		$tvShowsContainer.find('.tv-show').remove()
+		var $loader = $('<div class="loader">')
+		$loader.appendTo($tvShowsContainer);
+		
+		const busqueda = qs.parse(ctx.querystring)
+		searchShows(busqueda, function(res) {
+			$loader.remove()
+			var shows = res.map(function(element){
+				return element.show;
+			})
+			renderShows(shows)
+		})
+})
 
 page();
