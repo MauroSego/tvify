@@ -55,11 +55,12 @@ body{
 	background-color: #ecf0f1
 }
 
-/*.tv-show button.like{
+.tv-show button.like{
 	background: transparent;
-	border: 0;
+	border: 1px solid black;
 	outline: 0;
 	position: absolute;
+	border-radius: 10px;
 	top: 10px;
 	right: 10px;
 	cursor: pointer;
@@ -69,14 +70,14 @@ body{
 	background-color: #F5B96C;
 	transition: all 1s ease;
 }
+
+.tv-show.liked button.like{
+	font-size: 36px;
+}
 .tv-show.liked:hover{
 	background-color: #F4C992;
 }
 
-.tv-show .like .corazon{
-	width: 15px;
-	height: 15px;
-}*/
 .tv-show .img-container {
 	width: 20%;
 }
