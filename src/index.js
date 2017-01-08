@@ -18,7 +18,6 @@ page('/', function(ctx, next){
     } else {
     renderShows(JSON.parse(localStorage.shows));
   }
-  }
 });
 
 page();
